@@ -24,13 +24,14 @@ const styles = StyleSheet.create({
     header: {
         margin:'16px',
         flexDirection:'row',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
     },
     logoHeader: {
         height:'80%',
-        width:'75%',
+        width:'80%',
         resizeMode:'stretch',
         alignSelf:'center',
-        marginVertical:'5%'
+        marginVertical:'5%',
+        position:'absolute'
     }
 })

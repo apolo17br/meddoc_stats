@@ -1,33 +1,42 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Header from '../components/header';
+import Button from '../components/buttonConectar';
 
-export default function ForgotPassword({ navigation }) {
+export default function RedefinePassword() {
     return (
-      <View style={{flex:1, backgroundColor:'#38b6ff', height:'100%'}}>
+        <View style={{flex:1, backgroundColor:'#38b6ff', height:'100%'}}>
         <Header />
 
           <View style={styles.subHeader}>
-            <Text style={styles.title}>RECUPERAR SENHA</Text>
+            <Text style={styles.title}>CRIAR NOVA SENHA</Text>
           </View>
 
           <View style={styles.background}>
 
             <View>
-              <Text style={styles.instructions}>Digite o e-mail associado à sua conta. Nós mandaremos um e-mail com as instruções para recuperar sua senha.</Text>
+              <Text style={styles.instructions}>Sua nova senha deve ser diferente das senhas previamente usadas.</Text>
             </View>
 
             <View>
-              <Text style={styles.captions}>Informe seu endereço de e-mail</Text>
+              <Text style={styles.captions}>Senha</Text>
               <View style={styles.input}>
-                <TextInput placeholder='Seu endereço de e-mail' style={styles.placeholder} keyboardType='email-address' autoCapitalize='none' autoCorrect={false} />
+                <TextInput placeholder='Informe sua nova senha' style={styles.placeholder} keyboardType='email-address' autoCapitalize='none' autoCorrect={false} />
               </View>
+              <Text style={styles.observation}>A senha deve conter pelo menos 6 caracteres</Text>
             </View>
 
             <View>
-              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CheckEmail')}>
-                  <Text style={styles.text}>ENVIAR</Text>
-              </TouchableOpacity>
+              <Text style={styles.captions}>Confirme sua senha</Text>
+              <View style={styles.input}>
+                <TextInput placeholder='Confirme sua nova senha' style={styles.placeholder} keyboardType='password' autoCapitalize='none' autoCorrect={false}/>
+              </View>
+              <Text style={styles.observation}>As senhas devem ser iguais</Text>
+
+              <View>
+              <Button />
+              </View>
+
             </View>
 
           </View>
@@ -61,8 +70,7 @@ export default function ForgotPassword({ navigation }) {
       fontWeight:400,
       color:'#000',
       textAlign:'left',
-      marginBottom:'32px',
-      textAlign:'justify'
+      marginBottom:'32px'
     },
     captions: {
       color:'#2D3748',
@@ -79,7 +87,7 @@ export default function ForgotPassword({ navigation }) {
       backgroundColor:'#fff',
       height:'50px',
       justifyContent:'center',
-      marginBottom:'16px'
+      marginBottom:'4px'
     },
     placeholder: {
       color:'#a0aec0',
@@ -87,18 +95,11 @@ export default function ForgotPassword({ navigation }) {
       fontFamily:'Inter',
       fontWeight:400
     },
-    button: {
-      backgroundColor:'#38b6ff',
-      height:'50px',
-      borderRadius:'12px',
-      marginTop:'64px',
-      justifyContent:'center',
-      alignItems:'center'
-  },
-  text: {
-      color:'#fff',
-      fontFamily:'Inter',
-      fontSize:'20',
-      fontWeight:'700',
-  }
-  });
+    observation: {
+        fontFamily:'Inter',
+        fontSize:14,
+        fontStyle:'italic',
+        color:'#c0bbbb',
+        marginBottom:'16px'
+    }
+})
