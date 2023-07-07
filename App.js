@@ -6,6 +6,7 @@ import Home from './app/pages/Home';
 import SignIn from './app/pages/SignIn';
 import SignUp from './app/pages/SignUp';
 import Welcome from './app/pages/Welcome';
+import Header from './app/components/header';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +14,7 @@ export default function App() {
   return (
     <ChakraProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName='Home' options={{headerShown: false}}>
 
         <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
         <Stack.Screen name='Home' component={Home} />

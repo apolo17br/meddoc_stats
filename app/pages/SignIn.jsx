@@ -1,19 +1,29 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from '../components/header';
 
 export default function SignIn() {
     return (
-      <View style={styles.container}>
-        <Text>SIGN IN!</Text>
+      <View>
+        <Header />
+          <View style={styles.subHeader}>
+            <Text style={styles.title}>ENTRAR</Text>
+          </View>
       </View>
     );
   }
   
   const styles = StyleSheet.create({
-    container: {
+    subHeader: {
       flex: 1,
-      backgroundColor: '#d0d0d0',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: '#38b6ff',
     },
+    title: {
+      color:'#fff',
+      fontSize:32,
+      fontFamily:'Inter',
+      fontWeight:'900',
+      marginLeft:'16px',
+      marginBottom:'16px'
+    }
   });
