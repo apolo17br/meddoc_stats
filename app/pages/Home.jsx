@@ -26,12 +26,12 @@ export default function Home({ navigation }) {
             <Text style={styles.cli}>ENTRAR</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.client}>
+            <TouchableOpacity style={styles.client} onPress={() => navigation.navigate('SignUp')}>
               <IoPersonAddOutline style={styles.buttons} />
               <Text style={styles.cli}>CADASTRAR</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.doctor}>
+            <TouchableOpacity style={styles.doctor} onPress={() => navigation.navigate('SignUpDoctor')}>
               <Text style={styles.doc}>SOU MÉDICO</Text>
             </TouchableOpacity>
           </View>

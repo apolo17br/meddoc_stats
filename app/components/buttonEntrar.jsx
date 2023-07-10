@@ -1,11 +1,11 @@
 import React from "react";
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 
-export default function ButtonConectar({ navigation }) {
+export default function ButtonEntrar({ navigation }) {
     return(
         <View>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Menu')}>
-                <Text style={styles.text}>CONECTAR</Text>
+                <Text style={styles.text}>ENTRAR</Text>
             </TouchableOpacity>
         </View>
     )

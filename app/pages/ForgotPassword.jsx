@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 import Header from '../components/header';
+import ButtonEnviar from '../components/buttonEnviar';
 
 export default function ForgotPassword({ navigation }) {
     return (
@@ -25,9 +26,7 @@ export default function ForgotPassword({ navigation }) {
             </View>
 
             <View>
-              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CheckEmail')}>
-                  <Text style={styles.text}>ENVIAR</Text>
-              </TouchableOpacity>
+              <ButtonEnviar />
             </View>
 
           </View>

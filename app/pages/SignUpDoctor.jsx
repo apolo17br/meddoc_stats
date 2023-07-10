@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Switch } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput,  } from 'react-native';
 import Header from '../components/header';
 import ButtonCadastrar from '../components/buttonCadastrar';
 
-export default function SignUp({ navigation }) {
+export default function SignUpDoctor({ navigation }) {
     return (
       <View style={{flex:1, backgroundColor:'#38b6ff', height:'100%'}}>
           <Header />
@@ -22,9 +22,9 @@ export default function SignUp({ navigation }) {
               </View>
 
               <View>
-                <Text style={styles.captions}>CPF</Text>
+                <Text style={styles.captions}>CRM</Text>
                 <View style={styles.input}>
-                  <TextInput placeholder='Seu CPF (somente números)' style={styles.placeholder} keyboardType='password' autoCapitalize='none' autoCorrect={false}/>
+                  <TextInput placeholder='Seu CRM' style={styles.placeholder} keyboardType='password' autoCapitalize='none' autoCorrect={false}/>
                 </View>
               </View>
 
@@ -62,7 +62,7 @@ export default function SignUp({ navigation }) {
 
               <View style={{flexDirection:'row', alignSelf:'center', marginTop:'16px'}}>
                 <Text style={{color:'#A0AEC0', fontFamily:'Inter', fontWeight:'400', fontSize:14}}>Já possui uma conta? </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+                <TouchableOpacity>
                   <Text style={{color:'#38b6ff', fontFamily:'Inter', fontWeight:'700', fontSize:14}}>Entre</Text>
                 </TouchableOpacity>
               </View>
