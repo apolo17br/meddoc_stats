@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Switch } from 'react-native';
 import Header from '../components/header';
 import ButtonCadastrar from '../components/buttonCadastrar';
+import Button from '../components/Button/Button';
 
 export default function SignUp({ navigation }) {
     return (
@@ -58,7 +59,7 @@ export default function SignUp({ navigation }) {
                 <Text style={styles.observation}>As senhas devem ser iguais</Text>
               </View>
 
-              <ButtonCadastrar />
+              <Button text="Cadastrar" onPress={() => navigation.navigate('Menu')} />
 
               <View style={{flexDirection:'row', alignSelf:'center', marginTop:'16px'}}>
                 <Text style={{color:'#A0AEC0', fontFamily:'Inter', fontWeight:'400', fontSize:14}}>Já possui uma conta? </Text>
@@ -71,7 +72,7 @@ export default function SignUp({ navigation }) {
         </View>
     );
   }
-  
+
   const styles = StyleSheet.create({
     subHeader: {
       backgroundColor: '#38b6ff',
