@@ -14,7 +14,7 @@ export function Routes() {
       <Route path="/">
         {/* PUBLIC ROUTES */}
 
-        <Route path="/login" element={<LoginScreen />} />
+        <Route path="" element={<LoginScreen />} />
 
         <Route element={<CustomRoute />}>
           {/* PRIVATE ROUTES */}
