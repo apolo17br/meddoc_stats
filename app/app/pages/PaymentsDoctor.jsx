@@ -35,7 +35,7 @@ export default function AboutDoctor({ navigation }) {
                     <View>
                     <IoAlertCircleOutline style={{height:'20px', width:'20px', alignSelf:'flex-start'}} />
                     </View>
-                    <Text style={{fontFamily:'Inter', textAlign:'justify'}}>{'\n'}Ao transferir, lembre-se que 30% do valor é retido para a plataforma MEDDOC e o restante é recebido inteiramente no método escolhido por você.</Text>
+                    <Text style={{fontFamily:'Inter', textAlign:'justify'}}>{'\n'}Ao transferir, lembre-se que 30% do valor é retido para a plataforma MEDDOC e o restante é recebido inteiramente através do método escolhido por você.</Text>
                 </View>
             </View>
 

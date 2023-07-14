@@ -19,7 +19,7 @@ export default function AllSetDoctor({ navigation }) {
 
             <View style={{alignItems:'center'}}>
               <Image source={require('../../assets/img/doctors.png')} style={{width:'256px', height:'168.26px', resizeMode:'stretch'}} />
-              <Text style={{alignSelf:'center', color:'#d4d4d4', fontSize:10, fontFamily:'Inter'}}>Ilustração por Freepik</Text>
+              <Text style={{fontFamily:'Inter', fontSize:10, alignSelf:'center', color:'#a0aec0'}}>Ilustração por Freepik</Text>
             </View>
 
             <View>

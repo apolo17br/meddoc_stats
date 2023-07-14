@@ -27,11 +27,10 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
     },
     logoHeader: {
-        height:'80%',
-        width:'80%',
-        resizeMode:'stretch',
-        alignSelf:'center',
-        marginVertical:'5%',
-        position:'absolute'
+        maxWidth:'64px',
+        maxHeight:'128px',
+        width:'100%',
+        height:'100%',
+        alignSelf:'center'
     }
 })

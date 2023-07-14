@@ -37,7 +37,7 @@ export default function ForgotPassword({ navigation }) {
               <Text style={styles.tente}>tente outro endereço de e-mail</Text>
               </TouchableOpacity>
             </View>
-          <Text style={{alignSelf:'center', color:'#000', fontSize:10, fontFamily:'Inter'}}>Ilustração por Freepik</Text>
+          <Text style={{fontFamily:'Inter', fontSize:10, alignSelf:'center', color:'#a0aec0'}}>Ilustração por Freepik</Text>
           </View>
       </View>
     );
