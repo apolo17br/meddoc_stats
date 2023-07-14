@@ -1,6 +1,7 @@
 import { Grid, GridItem } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
+import styles from '/Users/Caio Sabido/Documents/VS Code/MEDDOC APP/meddoc/web/src/styles/LoginScreen.module.css'
 
 export function LoginScreen() {
   return (
@@ -18,28 +19,44 @@ export function LoginScreen() {
       <GridItem pl='2' bg='orange.300' area={'header'}>
         LOGO
       </GridItem>
-      <GridItem bg='green.300'>
+      <GridItem>
         <Container centerContent>
-          <Button
-            size='md'
-            height='48px'
-            width='420px'
-            fontSize='px'
-            bg='#f5f6f7'
-            color='#000000'
-          >
-            ENTRAR
-          </Button>
+            <h1 style={{marginTop: "5vh", fontSize: "32px", color: "black"}}> Olá! </h1>
+            <h2 className={`${styles.subtitle}`}> Escolha uma das opções para prosseguir ao sistema. </h2>
+            <Button
+              size='md'
+              height='65px'
+              width='420px'
+              fontSize='px'
+              bg='#38B6FF'
+              color='white'
+              marginBottom='3vh'
+            >
+              ENTRAR
+            </Button>
 
-          <Grid
-            h='10%'
-            templateRows='repeat(2, 1fr)'
-            templateColumns='repeat(5, 1fr)'
-            gap={4}
-          >
-            <GridItem rowSpan={0} colSpan={1} bg='tomato' />
-            <GridItem colSpan={2} bg='papayawhip'> </GridItem>
-          </Grid>
+            <Button
+              size='md'
+              height='65px'
+              width='420px'
+              fontSize='px'
+              bg='#3870FF'
+              color='white'
+              marginBottom='3vh'
+            >
+              CADASTRAR
+            </Button>
+
+            <Button
+              size='md'
+              height='65px'
+              width='420px'
+              fontSize='px'
+              bg='#043CCA'
+              color='white'
+            >
+              SOU MÉDICO
+            </Button>
         </Container>
       </GridItem>
     </Grid>
