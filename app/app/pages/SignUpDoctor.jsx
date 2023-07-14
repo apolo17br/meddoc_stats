@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput,  } from 'react-native';
 import Header from '../components/header';
-import ButtonCadastrar from '../components/buttonCadastrar';
+import Button from '../components/buttonAzul';
 
 export default function SignUpDoctor({ navigation }) {
     return (
       <View style={{flex:1, backgroundColor:'#38b6ff', height:'100%'}}>
           <Header />
 
-            <View style={styles.subHeader}>
+            <View>
               <Text style={styles.title}>CADASTRAR</Text>
             </View>
 
@@ -58,11 +58,11 @@ export default function SignUpDoctor({ navigation }) {
                 <Text style={styles.observation}>As senhas devem ser iguais</Text>
               </View>
 
-              <ButtonCadastrar />
+              <Button text='CADASTRAR' />
 
               <View style={{flexDirection:'row', alignSelf:'center', marginTop:'16px'}}>
                 <Text style={{color:'#A0AEC0', fontFamily:'Inter', fontWeight:'400', fontSize:14}}>Já possui uma conta? </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
                   <Text style={{color:'#38b6ff', fontFamily:'Inter', fontWeight:'700', fontSize:14}}>Entre</Text>
                 </TouchableOpacity>
               </View>
@@ -73,9 +73,6 @@ export default function SignUpDoctor({ navigation }) {
   }
   
   const styles = StyleSheet.create({
-    subHeader: {
-      backgroundColor: '#38b6ff',
-    },
     title: {
       color:'#fff',
       fontSize:32,

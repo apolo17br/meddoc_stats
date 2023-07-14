@@ -109,7 +109,7 @@ export default function ForgotPassword({ navigation }) {
     },
     tente: {
       fontFamily:'Inter',
-      fontSize:14,
+      fontSize:12,
       color:'#38b6ff',
       fontWeight:'700',
     }
