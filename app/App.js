@@ -18,6 +18,8 @@ import AboutDoctor from './app/pages/AboutDoctor';
 import PaymentsDoctor from './app/pages/PaymentsDoctor';
 import FollowUpDoctor from './app/pages/FollowUpDoctor';
 import NoFollowUpDoctor from './app/pages/NoFollowUpDoctor';
+import AboutPatient from './app/pages/AboutPatient';
+import Payments from './app/pages/Payments';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,7 +27,7 @@ export default function App() {
   return (
     <ChakraProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='NoFollowUpDoctor' options={{headerShown: false}}>
+      <Stack.Navigator initialRouteName='Menu' options={{headerShown: false}}>
 
         <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
         <Stack.Screen name='Home' component={Home} />
@@ -45,6 +47,8 @@ export default function App() {
         <Stack.Screen name='PaymentsDoctor' component={PaymentsDoctor} />
         <Stack.Screen name='FollowUpDoctor' component={FollowUpDoctor} />
         <Stack.Screen name='NoFollowUpDoctor' component={NoFollowUpDoctor} />
+        <Stack.Screen name='AboutPatient' component={AboutPatient} />
+        <Stack.Screen name='Payments' component={Payments} />
 
       </Stack.Navigator>
     </NavigationContainer>

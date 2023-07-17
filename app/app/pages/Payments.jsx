@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../components/header';
 import ButtonsPagamentos from '../components/buttonsPagamentos';
-import { IoDocumentTextOutline, IoEyeOutline, IoAlertCircleOutline } from 'react-icons/io5';
+import { IoDocumentTextOutline, IoTicketOutline } from 'react-icons/io5';
 
-export default function PaymentsDoctor({ navigation }) {
+export default function Payments({ navigation }) {
 
     return (
       <View style={{flex:1, backgroundColor:'#38b6ff', height:'100%'}}>
@@ -17,37 +17,22 @@ export default function PaymentsDoctor({ navigation }) {
           <View style={styles.background}>
 
             <View>
-                <View>
-                    <Text style={{fontFamily:'Inter', color:'#2d3748', fontSize:24, marginBottom:'8px', fontWeight:'600'}}>Valor a receber</Text>
-                </View>
-                <View style={{flexDirection:'row', alignItems:'center', marginVertical:'8px'}}>
-                    <TouchableOpacity> 
-                        <IoEyeOutline style={{height:'32px', width:'32px'}}/>
-                    </TouchableOpacity>
-                    <Text style={{marginLeft:'8px', fontFamily:'Inter', fontSize:32}}>R$ -</Text>
-                </View>
-                <View>
-                    <TouchableOpacity style={{backgroundColor:'#38b6ff', borderRadius:'15px', alignItems:'center'}}>
-                        <Text style={{color:'#fff', paddingVertical:'16px', fontFamily:'Inter', fontSize:20}}>Transferir valor</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={{flexDirection:'row', marginTop:'8px'}}>
-                    <View>
-                    <IoAlertCircleOutline style={{height:'20px', width:'20px', alignSelf:'flex-start'}} />
-                    </View>
-                    <Text style={{fontFamily:'Inter', textAlign:'justify'}}>{'\n'}Ao transferir, lembre-se que 30% do valor é retido para a plataforma MEDDOC e o restante é recebido inteiramente através do método escolhido por você.</Text>
-                </View>
-            </View>
-
-            <View>
-                <Text style={{fontFamily:'Inter', color:'#2d3748', fontSize:24, marginBottom:'8px', marginTop:'16px', fontWeight:'600'}}>Métodos de recebimento</Text>
+                <Text style={{fontFamily:'Inter', color:'#2d3748', fontSize:24, marginBottom:'8px', marginTop:'16px', fontWeight:'600'}}>Métodos de pagamento</Text>
                 <ButtonsPagamentos text="PIX" />
                 <ButtonsPagamentos text="Cartão de crédito" />
                 <ButtonsPagamentos text="Boleto bancário" />
             </View>
 
             <View>
-                <Text style={{fontFamily:'Inter', color:'#2d3748', fontSize:24, marginBottom:'8px', marginTop:'16px', fontWeight:'600'}}>Histórico</Text>     
+                <Text style={{fontFamily:'Inter', color:'#2d3748', fontSize:24, marginBottom:'8px', marginTop:'16px', fontWeight:'600'}}>Vouchers</Text>     
+                <TouchableOpacity style={styles.card}>
+                    <TextInput style={styles.text} placeholder='Adicionar código voucher'/>
+                    <IoTicketOutline style={{height:'24px', width:'24px'}}/>
+                </TouchableOpacity>       
+            </View>
+
+            <View>
+                <Text style={{fontFamily:'Inter', color:'#2d3748', fontSize:24, marginBottom:'8px', marginTop:'16px', fontWeight:'600'}}>Histórico de pagamentos</Text>     
                 <TouchableOpacity style={styles.card}>
                     <Text style={styles.text}>Visualizar extrato</Text>
                     <IoDocumentTextOutline style={{height:'24px', width:'24px'}}/>

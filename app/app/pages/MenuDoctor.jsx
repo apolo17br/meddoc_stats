@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import HeaderMenuDoctor from '../components/headerMenuDoctor';
-import Card from '../components/card';
 
 export default function MenuDoctor({ navigation }) {
     return (
@@ -10,9 +9,9 @@ export default function MenuDoctor({ navigation }) {
 
             <View style={styles.background}>
                 <View style={styles.cards}>
-                    <Card text="AGENDA" onPress={() => navigation.navigate('Agenda')}/>
-                    <Card text="RETORNOS" onPress={() => navigation.navigate('Retornos')}/>
-                    <Card text="PAGAMENTOS" onPress={() => navigation.navigate('Pagamentos')}/>
+                    <Text>"AGENDA"</Text>
+                    <Text>"RETORNOS"</Text> 
+                    <Text>"PAGAMENTOS"</Text>
                 </View>
             </View>
 
