@@ -1,7 +1,7 @@
 import { Grid, GridItem } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
-import styles from '/Users/Caio Sabido/Documents/VS Code/MEDDOC APP/meddoc/web/src/styles/LoginScreen.module.css'
+import styles from './LoginScreen.module.css'
 
 export function LoginScreen() {
   return (
