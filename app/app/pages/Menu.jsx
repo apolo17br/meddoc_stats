@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import HeaderMenu from '../components/headerMenu';
-import modal from '../components/modal';
+import ModalPlantao from '../components/modalPlantao'
+import ModalAgendar from '../components/modalAgendar';
 
 export default function Menu({ navigation }) {
-const [openModal, setOpenModal] = useState(false)
 
     return (
         <View style={{flex:1, backgroundColor:'#38b6ff'}}>
@@ -13,9 +13,8 @@ const [openModal, setOpenModal] = useState(false)
             <View style={styles.background}>
                 <View style={styles.cards}>
                     <View>
-                    <TouchableOpacity style={styles.card} onPress={() => setOpenModal(true)}>
-                        <Text style={styles.text}>PLANTÃO MÉDICO</Text>
-                    </TouchableOpacity>
+                    <ModalPlantao />
+                    <ModalAgendar />
                     </View>
                 </View>
             </View>
