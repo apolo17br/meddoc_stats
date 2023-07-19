@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import HeaderMenu from '../components/headerMenu';
-import ModalPlantao from '../components/modalPlantao'
-import ModalAgendar from '../components/modalAgendar';
+import { CardPlantao } from '../components/cardPlantao'
+import { CardAgendar } from '../components/cardAgendar';
 
 export default function Menu({ navigation }) {
 
@@ -13,8 +13,8 @@ export default function Menu({ navigation }) {
             <View style={styles.background}>
                 <View style={styles.cards}>
                     <View>
-                    <ModalPlantao />
-                    <ModalAgendar />
+                    <CardPlantao />
+                    <CardAgendar />
                     </View>
                 </View>
             </View>
