@@ -1,10 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
-import { Routes } from "../../routes/Routes";
-import { ChakraProvider } from '@chakra-ui/react';
-import '../../styles/global.css';
-
-
-import '../../theme/fonts.css';
 import { extendTheme, theme as base } from "@chakra-ui/react";
 
 const theme = extendTheme({
@@ -30,19 +23,4 @@ const theme = extendTheme({
     },
 });
 
-export default function App() {
-  const isAuthenticated = true;
-
-  return (
-    <BrowserRouter>
-      <ChakraProvider theme={theme}>
-        {/* Não Autenticado */}
-        {!isAuthenticated && <Routes />}
-
-        {/* Autenticado */}
-        {isAuthenticated && <Routes />}
-      </ChakraProvider>
-    </BrowserRouter>
-  )
-}
-
+export default theme;

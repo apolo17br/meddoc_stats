@@ -1,6 +1,6 @@
 import { Routes as Switch, Route, Navigate, Outlet } from "react-router-dom";
 
-import { HomeScreen, LoginScreen } from "../screens";
+import { HomeScreen, LoginScreen, UserRegisterScreen } from "../screens";
 
 function CustomRoute() {
   const isAthenticated = true;
@@ -15,6 +15,7 @@ export function Routes() {
         {/* PUBLIC ROUTES */}
 
         <Route path="" element={<LoginScreen />} />
+        <Route path="/cadastro-usuario" element={<UserRegisterScreen />} />
 
         <Route element={<CustomRoute />}>
           {/* PRIVATE ROUTES */}
