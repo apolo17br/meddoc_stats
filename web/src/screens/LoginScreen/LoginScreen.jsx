@@ -1,6 +1,6 @@
 import { Grid, GridItem } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import styles from './LoginScreen.module.css'
 
 export function LoginScreen() {
