@@ -3,12 +3,12 @@ import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { IoArrowBackCircleOutline, IoPersonCircleOutline } from 'react-icons/io5';
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function HeaderMenu({ text, onPress }) {
+export default function HeaderMenu({ text, onPress, navigation: { goBack } }) {
     return (
 
         <SafeAreaView style={{backgroundColor:'#38b6ff', width:'100%', height:'90px'}}>
             <View  style={styles.header}>
-                <TouchableOpacity onPress={onPress}>
+                <TouchableOpacity onPress={() => goBack()}>
                     <IoArrowBackCircleOutline style={{color:'#fff', width:'64px', height:'64px'}} />
                 </TouchableOpacity>
 

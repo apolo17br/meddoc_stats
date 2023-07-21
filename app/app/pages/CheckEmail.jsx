@@ -25,7 +25,7 @@ export default function ForgotPassword({ navigation }) {
               <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Menu')}>
                   <Text style={styles.text}>ABRIR E-MAIL</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonLater} onPress={() => navigation.navigate('Menu')}>
+              <TouchableOpacity style={styles.buttonLater} onPress={() => navigation.navigate('Home')}>
                   <Text style={styles.textLater}>Confirmar depois</Text>
               </TouchableOpacity>
             </View>

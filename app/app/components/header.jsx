@@ -8,7 +8,7 @@ export default function Header({ navigation }) {
 
         <SafeAreaView style={{backgroundColor:'#38b6ff', width:'100%', height:'100px'}}>
             <View  style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.popToTop()}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
                     <IoArrowBackCircleOutline style={{color:'#fff', width:'64px', height:'64px'}} />
                 </TouchableOpacity>
 
