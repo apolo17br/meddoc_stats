@@ -1,21 +1,25 @@
+import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react'
 import { Image } from '@chakra-ui/react'
 import logo from '../../assets/logo/logo02.png'
 import voltar from '../../assets/icons/botao-voltar-preto.png'
-import { Stack, HStack, VStack } from '@chakra-ui/react'
+import ilustracao from '../../assets/ilustrations/login-registration.png'
+import { HStack, VStack } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
-import { SimpleGrid } from '@chakra-ui/react'
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
-import { Button, ButtonGroup } from '@chakra-ui/react'
 import styles from './UserRegisterScreen.module.css'
 
 export function UserRegisterScreen() {
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
+
+    const [show2, setShow2] = React.useState(false)
+    const handleClick2 = () => setShow2(!show2)
 
     return (
         <Grid
@@ -36,42 +40,79 @@ export function UserRegisterScreen() {
 
 
             <GridItem pl='2' area={'main'}>
-                <VStack
-                    spacing={4}
-                    align='left'
-                >
-                    <SimpleGrid bg='red' columns={2} spacingX='2%' spacingY='5%'>
-                        <Image boxSize='auto' src={voltar} alt='Botão voltar' />
-                        <Text> Cadastre-se </Text>
-                    </SimpleGrid>
-                    <Text> Preencha os campos abaixo para cadastrar-se no sistema. </Text>
-                    <div>
-                        <Text>Nome</Text>
-                        <Input focusBorderColor='#38B6FF' placeholder='Seu nome completo' />
-                    </div>
-                    <div>
-                        <Text>CPF</Text>
-                        <Input focusBorderColor='#38B6FF' placeholder='Seu CPF sem pontuações' />
-                    </div>
-                    <div>
-                        <Text>CEP</Text>
-                        <Input focusBorderColor='#38B6FF' placeholder='Seu CEP sem pontuações' />
-                    </div>
-                    <div>
-                        <InputGroup size='md'>
-                            <Input
-                                pr='4.5rem'
-                                type={show ? 'text' : 'password'}
-                                placeholder='Informe sua senha'
-                            />
-                            <InputRightElement width='4.5rem'>
-                                <Button h='1.75rem' size='sm' onClick={handleClick}>
-                                    {show ? 'Mostrar' : 'Esconder'}
-                                </Button>
-                            </InputRightElement>
-                        </InputGroup>
-                    </div>
-                </VStack>
+                <div className={`${styles.mainContent}`}>
+                    <VStack
+                        spacing={4}
+                        align='left'
+                    >
+                        <HStack spacing='24px'>
+                            <Box>
+                                <Image boxSize='auto' src={voltar} alt='Botão voltar' />
+                            </Box>
+                            <Box>
+                                <Text className={`${styles.registerTitle}`}> Cadastre-se </Text>
+                            </Box>
+                        </HStack>
+                        <Text className={`${styles.registerSubtitle}`}> Preencha os campos abaixo para cadastrar-se no sistema. </Text>
+                        <div>
+                            <Text className={`${styles.inputTitle}`}>Nome</Text>
+                            <Input focusBorderColor='#38B6FF' placeholder='Seu nome completo' size='lg' />
+                        </div>
+                        <div>
+                            <Text className={`${styles.inputTitle}`}>CPF</Text>
+                            <Input focusBorderColor='#38B6FF' placeholder='Seu CPF sem pontuações' size='lg' />
+                        </div>
+                        <div>
+                            <Text className={`${styles.inputTitle}`}>CEP</Text>
+                            <Input focusBorderColor='#38B6FF' placeholder='Seu CEP sem pontuações' size='lg' />
+                        </div>
+                        <div>
+                            <Text className={`${styles.inputTitle}`}>Senha</Text>
+                            <InputGroup size='md'>
+                                <Input
+                                    pr='4.5rem'
+                                    type={show ? 'text' : 'password'}
+                                    placeholder='Informe sua senha'
+                                    size='lg'
+                                />
+                                <InputRightElement width='4.5rem'>
+                                    <Button h='2rem' size='sm' onClick={handleClick}>
+                                        {show ? 'Esconder' : 'Mostrar'}
+                                    </Button>
+                                </InputRightElement>
+                            </InputGroup>
+                        </div>
+                        <div>
+                            <Text className={`${styles.inputTitle}`}>Confirme sua senha</Text>
+                            <InputGroup size='md'>
+                                <Input
+                                    pr='4.5rem'
+                                    type={show2 ? 'text' : 'password'}
+                                    placeholder='Repita sua senha'
+                                    size='lg'
+                                />
+                                <InputRightElement width='4.5rem'>
+                                    <Button h='2rem' size='sm' onClick={handleClick2}>
+                                        {show2 ? 'Esconder' : 'Mostrar'}
+                                    </Button>
+                                </InputRightElement>
+                            </InputGroup>
+                        </div>
+
+                        <div className={`${styles.buttonBox}`}>
+                            <Button
+                                size='lg'
+                                height='80px'
+                                width='100%'
+                                bg='#4FD1C5'
+                                color='white'
+                                variant='solid'
+                            >
+                                CADASTRAR
+                            </Button>
+                        </div>
+                    </VStack>
+                </div>
             </GridItem>
 
 
@@ -107,8 +148,17 @@ export function UserRegisterScreen() {
             </GridItem>
 
 
-            <GridItem pl='2' bg='pink.300' area={'ilustration'}>
-                Ilustration
+            <GridItem pl='2' bgGradient='linear(to-b, #38B6FF, #ffffff)' area={'ilustration'}>
+                <div className={`${styles.ilustrationMargin}`}>
+                    <VStack
+                        spacing={4}
+                        align='center'
+                    >
+                        <Text className={`${styles.ilustrationSubtitle}`}> Primeira vez por aqui? </Text>
+                        <Text className={`${styles.ilustrationTitle}`}> BEM-VINDO(A)! </Text>
+                        <Image boxSize='90%' src={ilustracao} alt='Ilustração médico virtual' />
+                    </VStack>
+                </div>
             </GridItem>
         </Grid>
     )

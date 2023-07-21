@@ -2,3 +2,43 @@
     margin-top: 2%;
     margin-left: 5%;
 }
+
+.mainContent {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.registerTitle {
+    font-size: 32px;
+    color: black;
+}
+
+.registerSubtitle {
+    font-size: 22px;
+}
+
+.inputTitle {
+    font-size: 20px;
+}
+
+.buttonBox {
+    margin-top: 3%;
+}
+
+
+
+
+.ilustrationMargin {
+    margin-top: 8%;
+}
+
+.ilustrationTitle {
+    font-size: 60px;
+    color: white;
+}
+
+.ilustrationSubtitle {
+    font-size: 32px;
+    color: white;
+}
