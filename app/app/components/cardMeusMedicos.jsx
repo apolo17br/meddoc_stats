@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export function CardAgendar() {
+export function CardMeusMedicos() {
 
   return (
     <View style={styles.card}>
         <Image 
-          source={require('../../assets/img/agendarMenu.png')} 
+          source={require('../../assets/img/meusMedicosMenu.png')} 
           style={{width:'80px', height:'80px'}}
         />
-        <Text style={{fontFamily:'Inter', fontSize:16, textAlign:'center', fontWeight:'600'}}>AGENDAR{'\n'}CONSULTA</Text>
+        <Text style={{fontFamily:'Inter', fontSize:16, textAlign:'center', fontWeight:'600'}}>MEUS{'\n'}MÉDICOS</Text>
     </View>
   )
 }

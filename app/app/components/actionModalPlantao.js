@@ -12,12 +12,12 @@ export function ActionModalPlantao({ handleClose }) {
                     style={{ height: '128px', width: '128px' }}
                 />
 
-                <TouchableOpacity style={styles.buttonPlantao} onPress={() => { }}>
+                <TouchableOpacity style={styles.buttonPlantao} onPress={() => navigation.navigate('OnDutyAdult')}>
                     <Text style={styles.buttonText}>PLANTÃO ADULTO</Text>
                 </TouchableOpacity>
                 <Text style={{ fontFamily: 'Inter', fontSize: 14, color: '#a0aec0', fontStyle: 'italic', alignSelf: 'flex-start' }}>Acima de 14 anos</Text>
 
-                <TouchableOpacity style={styles.buttonPlantao} onPress={() => { }}>
+                <TouchableOpacity style={styles.buttonPlantao} onPress={() => navigation.navigate('OnDutyChild')}>
                     <Text style={styles.buttonText}>PLANTÃO PEDIÁTRICO</Text>
                 </TouchableOpacity>
                 <Text style={{ fontFamily: 'Inter', fontSize: 14, color: '#a0aec0', fontStyle: 'italic', alignSelf: 'flex-start' }}>Até 13 anos e 11 meses</Text>

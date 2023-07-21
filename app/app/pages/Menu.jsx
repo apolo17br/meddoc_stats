@@ -3,6 +3,10 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import HeaderMenu from '../components/headerMenu';
 import { CardPlantao } from '../components/cardPlantao'
 import { CardAgendar } from '../components/cardAgendar';
+import { CardDocumentos } from '../components/cardDocumentos';
+import { CardMeusMedicos } from '../components/cardMeusMedicos';
+import { CardConfirmadas } from '../components/cardConfirmadas';
+import { CardRetornos } from '../components/cardRetornos';
 
 export default function Menu({ navigation }) {
 
@@ -12,10 +16,29 @@ export default function Menu({ navigation }) {
 
             <View style={styles.background}>
                 <View style={styles.cards}>
-                    <View>
+
                     <CardPlantao />
-                    <CardAgendar />
-                    </View>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Appointments')}>
+                        <CardAgendar />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('FollowUp')}>
+                        <CardRetornos />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Confirmed')}>
+                        <CardConfirmadas />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('MyDoctors')}>
+                        <CardMeusMedicos />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Documents')}>
+                        <CardDocumentos />
+                    </TouchableOpacity>
+
                 </View>
             </View>
 
