@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 
-export function ActionModalPlantao({ handleClose }) {
+export function ActionModalPlantao({ handleClose, onPress }) {
     return (
         <SafeAreaView style={styles.container}>
 

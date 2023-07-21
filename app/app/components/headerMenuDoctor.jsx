@@ -17,8 +17,8 @@ export default function HeaderMenuDoctor({ text, onPress }) {
                     <Text style={{paddingHorizontal:'16px', fontFamily:'Inter', color:'#38b6ff', alignSelf:'center', fontSize:20}}>Sobre você</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
-                    <IoPersonCircleOutline onPress={onPress} style={{color:'#fff', width:'64px', height:'64px'}}/>
+                <TouchableOpacity onPress={onPress}>
+                    <IoPersonCircleOutline style={{color:'#fff', width:'64px', height:'64px'}}/>
                 </TouchableOpacity>
                 </View>
 

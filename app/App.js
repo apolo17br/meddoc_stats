@@ -34,7 +34,7 @@ export default function App() {
   return (
     <ChakraProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='CheckEmail' screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName='Documents' screenOptions={{headerShown: false}}>
 
         <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
         <Stack.Screen name='Home' component={Home} />

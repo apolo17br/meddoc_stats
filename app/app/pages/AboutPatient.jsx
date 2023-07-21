@@ -39,7 +39,7 @@ export default function AboutPatient({ navigation }) {
                 <View style={styles.input}>
                   <Text style={styles.placeholder}>***********</Text> 
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('RedefinePassword')}>
                     <Text style={{fontFamily:'Inter', color:'#a0aec0', fontSize:14}}>Alterar sua senha</Text>
                 </TouchableOpacity>
             </View>

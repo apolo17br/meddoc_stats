@@ -17,7 +17,7 @@ export default function HeaderMyData({ text, onPress }) {
                     <Text style={{paddingHorizontal:'16px', fontFamily:'Inter', color:'#38b6ff', alignSelf:'center', fontSize:20}}>Alterar foto</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={onPress}>
-                    <IoPersonCircleOutline onPress={onPress} style={{color:'#fff', width:'64px', height:'64px'}}/>
+                    <IoPersonCircleOutline style={{color:'#fff', width:'64px', height:'64px'}}/>
                 </TouchableOpacity>
                 </View>
                    
