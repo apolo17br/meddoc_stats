@@ -12,6 +12,7 @@ import { Box } from '@chakra-ui/react'
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 
+import { Navigate } from 'react-router-dom';
 import styles from './UserRegisterScreen.module.css'
 
 export function UserRegisterScreen() {
@@ -47,7 +48,9 @@ export function UserRegisterScreen() {
                     >
                         <HStack spacing='24px'>
                             <Box>
-                                <Image boxSize='auto' src={voltar} alt='Botão voltar' />
+                                <Navigate to='/' replace={true}>
+                                    <Image  boxSize='auto' src={voltar} alt='Botão voltar' />
+                                </Navigate>
                             </Box>
                             <Box>
                                 <Text className={`${styles.registerTitle}`}> Cadastre-se </Text>

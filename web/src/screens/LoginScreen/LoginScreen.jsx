@@ -4,9 +4,13 @@ import { Button } from '@chakra-ui/react'
 import { Image } from '@chakra-ui/react'
 import logo from '../../assets/logo/logo02.png'
 
+import { useNavigate } from 'react-router-dom'
+
 import styles from './LoginScreen.module.css'
 
 export function LoginScreen() {
+  const navigate = useNavigate()
+
   return (
     <Grid
       templateAreas={`"header header"
@@ -48,6 +52,7 @@ export function LoginScreen() {
             bg='#3870FF'
             color='white'
             marginBottom='3vh'
+            onClick={() => navigate('cadastro-usuario')}
           >
             CADASTRAR
           </Button>
