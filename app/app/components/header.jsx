@@ -12,7 +12,7 @@ export default function Header({ onPress }) {
                     <IoArrowBackCircleOutline style={{color:'#fff', width:'64px', height:'64px'}} />
                 </TouchableOpacity>
 
-                <View style={{backgroundColor:'#fff', borderRadius:20, height:'100%', width:'20%'}}>
+                <View style={{backgroundColor:'#fff', borderRadius:20, maxHeight:'140px', maxWidth:'85px', height:'100%', width:'100%', alignItems:'center', paddingBottom:'5px'}}>
                     <Image source={require('../../assets/img/logo.png')} style={styles.logoHeader}/>
                 </View>
             </View>
