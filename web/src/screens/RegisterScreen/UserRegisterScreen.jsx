@@ -8,9 +8,11 @@ import { HStack, VStack } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
+
 
 import { Navigate } from 'react-router-dom';
 import styles from './UserRegisterScreen.module.css'
@@ -48,9 +50,9 @@ export function UserRegisterScreen() {
                     >
                         <HStack spacing='24px'>
                             <Box>
-                                <Navigate to='/' replace={true}>
-                                    <Image  boxSize='auto' src={voltar} alt='Botão voltar' />
-                                </Navigate>
+                                <Button isRound={true}>
+                                <Image boxSize='auto' src={voltar} alt='Botão voltar' />
+                                </Button>
                             </Box>
                             <Box>
                                 <Text className={`${styles.registerTitle}`}> Cadastre-se </Text>
