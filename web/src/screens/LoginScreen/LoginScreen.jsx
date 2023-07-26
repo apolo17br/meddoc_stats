@@ -40,6 +40,7 @@ export function LoginScreen() {
             bg='#38B6FF'
             color='white'
             marginBottom='3vh'
+            onClick={() => navigate('login-paciente')}
           >
             ENTRAR
           </Button>
@@ -52,7 +53,7 @@ export function LoginScreen() {
             bg='#3870FF'
             color='white'
             marginBottom='3vh'
-            onClick={() => navigate('cadastro-usuario')}
+            onClick={() => navigate('cadastro-paciente')}
           >
             CADASTRAR
           </Button>
@@ -64,6 +65,7 @@ export function LoginScreen() {
             fontSize='24px'
             bg='#043CCA'
             color='white'
+            onClick={() => navigate('login-medico')}
           >
             SOU MÉDICO
           </Button>

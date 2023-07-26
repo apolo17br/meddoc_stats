@@ -14,15 +14,17 @@ import { Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 
 
-import { Navigate } from 'react-router-dom';
-import styles from './UserRegisterScreen.module.css'
+import { useNavigate } from 'react-router-dom'
+import styles from './MedRegisterScreen.module.css'
 
-export function UserRegisterScreen() {
+export function MedRegisterScreen() {
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
 
     const [show2, setShow2] = React.useState(false)
     const handleClick2 = () => setShow2(!show2)
+
+    const navigate = useNavigate()
 
     return (
         <Grid
@@ -50,12 +52,13 @@ export function UserRegisterScreen() {
                     >
                         <HStack spacing='24px'>
                             <Box>
-                                <Button isRound={true}>
-                                <Image boxSize='auto' src={voltar} alt='Botão voltar' />
-                                </Button>
+                                <IconButton isRound={true} colorScheme='white' variant='outline'
+                                onClick={() => navigate("/")}>
+                                    <Image boxSize='auto' src={voltar} alt='Botão voltar' />
+                                </IconButton>
                             </Box>
                             <Box>
-                                <Text className={`${styles.registerTitle}`}> Cadastre-se </Text>
+                                <Text className={`${styles.registerTitle}`}> Cadastro Médico </Text>
                             </Box>
                         </HStack>
                         <Text className={`${styles.registerSubtitle}`}> Preencha os campos abaixo para cadastrar-se no sistema. </Text>
@@ -64,8 +67,8 @@ export function UserRegisterScreen() {
                             <Input focusBorderColor='#38B6FF' placeholder='Seu nome completo' size='lg' />
                         </div>
                         <div>
-                            <Text className={`${styles.inputTitle}`}>CPF</Text>
-                            <Input focusBorderColor='#38B6FF' placeholder='Seu CPF sem pontuações' size='lg' />
+                            <Text className={`${styles.inputTitle}`}>CRM</Text>
+                            <Input focusBorderColor='#38B6FF' placeholder='Seu CRM sem pontuações' size='lg' />
                         </div>
                         <div>
                             <Text className={`${styles.inputTitle}`}>CEP</Text>
@@ -112,6 +115,7 @@ export function UserRegisterScreen() {
                                 bg='#4FD1C5'
                                 color='white'
                                 variant='solid'
+                                onClick={() => navigate("/confirmar-cadastro")}
                             >
                                 CADASTRAR
                             </Button>
@@ -130,15 +134,15 @@ export function UserRegisterScreen() {
                         <Box h='1vh'>
                             <Text>
                                 Já possui uma conta? {' '}
-                                <Link color="#38B6FF" href='#'>
+                                <Link color="#38B6FF" onClick={() => navigate("/login-medico")}>
                                     Conecte-se
                                 </Link>
                             </Text>
                         </Box>
                         <Box h='1vh'>
                             <Text>
-                                É médico? {' '}
-                                <Link color="#38B6FF" href='#'>
+                                É paciente? {' '}
+                                <Link color="#38B6FF" onClick={() => navigate("/cadastro-paciente")}>
                                     Clique aqui
                                 </Link>
                             </Text>
