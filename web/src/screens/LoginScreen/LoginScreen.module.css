@@ -1,5 +1,16 @@
-.subtitle {
+.title {
     color: black;
-    font-size: 18px;
+    font-size: 48px;
+}
+
+.subTitle {
+    color: black;
+    font-size: 24px;
     margin-bottom: 5vh;
+    text-align: center
+}
+
+.logo {
+    margin-top: 1%;
+    margin-left: 2%;
 }
