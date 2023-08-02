@@ -18,8 +18,8 @@ const theme = extendTheme({
     },
 
     fonts: {
-        heading: `Inter, ${base.fonts?.heading}`,
-        body: `Inter, ${base.fonts?.body}`,
+        heading: `Inter, 'sans-serif'`,
+        body: `Inter, sans-serif`,
     },
 });
 
