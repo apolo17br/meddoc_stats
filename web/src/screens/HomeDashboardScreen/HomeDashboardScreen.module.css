@@ -1,44 +1,84 @@
-.logo {
-    margin-top: 2%;
+.boxes {
+    margin-top: 5%;
     margin-left: 5%;
+    margin-bottom: 3%;
 }
 
-.mainContent {
-    margin-top: 2%;
+.boxDireita {
+    margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 3%;
+    height: 350px;
 }
 
-.registerTitle {
+.textoCalendario {
+    font-size: 24px;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.botaoCalendario {
+    font-size: 24px;
+    margin-top: 10%;
+    text-align: center;
+    position: relative;
+    left: 37%;
+}
+
+.usersList{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%; 
+    height: 45vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.dataTitle {
+    font-size: 26px;
+}
+
+.dataTitleList{
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+    color: #38B6FF;
+}
+
+.dataNumber {
     font-size: 32px;
-    color: black;
+    text-align: center;
+    font-weight: 900;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
 }
 
-.registerSubtitle {
-    font-size: 22px;
+.dataTextList {
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.inputTitle {
-    font-size: 20px;
+.modalTitle {
+    font-size: 24px;
+    font-weight: 700;
 }
 
-.buttonBox {
-    margin-top: 3%;
+.modalClockAndText {
+    padding-left: 2%;
+    width: 200px;
+    text-align: center;
+    font-weight: 700;
 }
 
-
-
-
-.ilustrationMargin {
-    margin-top: 8%;
-}
-
-.ilustrationTitle {
-    font-size: 60px;
-    color: white;
-}
-
-.ilustrationSubtitle {
-    font-size: 32px;
-    color: white;
+.modalCenterText {
+    padding-top: 3%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 5%;
+    text-align: center;
+    font-size: 18px;
 }
