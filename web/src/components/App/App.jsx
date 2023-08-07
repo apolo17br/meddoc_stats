@@ -2,13 +2,13 @@ import { BrowserRouter } from "react-router-dom";
 import { Routes } from "../../routes/Routes";
 import { ChakraProvider } from '@chakra-ui/react';
 import '../../styles/global.css';
-import './Header'
+import HeaderComponent from './HeaderComponent.jsx'
 import theme from "../../theme";
 
 export default function App() {
   const isAuthenticated = true;
 
-  return (
+  return (<>
     <BrowserRouter>
       <ChakraProvider theme={theme}>
         {/* Não Autenticado */}
@@ -18,6 +18,9 @@ export default function App() {
         {isAuthenticated && <Routes />}
       </ChakraProvider>
     </BrowserRouter>
+  
+    <HeaderComponent/>
+  </>
   )
 }
 

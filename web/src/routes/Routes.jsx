@@ -1,6 +1,7 @@
 import { Routes as Switch, Route, Navigate, Outlet } from "react-router-dom";
 
-import { HomeScreen, LoginScreen, UserRegisterScreen,  MedRegisterScreen, UserLoginScreen, MedLoginScreen, EmailConfirmationScreen, ForgetPasswordScreen, ForgetPasswordScreenConfirmation, CreateNewPasswordScreen, CreateNewPasswordScreenConfirmation, HomeDashboardScreen } from "../screens";
+import { HomeScreen, LoginScreen, UserRegisterScreen,  MedRegisterScreen, UserLoginScreen, MedLoginScreen, EmailConfirmationScreen, ForgetPasswordScreen, ForgetPasswordScreenConfirmation, CreateNewPasswordScreen, CreateNewPasswordScreenConfirmation, HomeDashboardScreen, 
+  CallProntuarioMedico } from "../screens";
 
 function CustomRoute() {
   const isAthenticated = true;
@@ -30,6 +31,7 @@ export function Routes() {
         <Route path="/criar-nova-senha-confirmacao" element={<CreateNewPasswordScreenConfirmation />} />
 
         <Route path="/dashboard" element={<HomeDashboardScreen />} />
+        <Route path="/call-prontuario" element={<CallProntuarioMedico />} />
 
 
         <Route element={<CustomRoute />}>

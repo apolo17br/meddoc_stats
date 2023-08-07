@@ -10,17 +10,17 @@ import { Box } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
 import { Divider } from '@chakra-ui/react'
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import calendar from '../../assets/icons/calendar-icon.png'
 import clock from '../../assets/icons/clock-icon.png'
 import user from '../../assets/icons/user-icon.png'
+import alert from '../../assets/icons/alert-icon.png'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
-import { Heading } from '@chakra-ui/react'
-/*import Header from '../../components/Header';*/
 
 
-import { useNavigate } from 'react-router-dom'
+
 import styles from './HomeDashboardScreen.module.css'
 
 export function HomeDashboardScreen() {
@@ -89,14 +89,14 @@ export function HomeDashboardScreen() {
                             </Text>
                             <Divider />
                             <Select placeholder='Selecione sua câmera'>
-                                <option value='option1'>Option 1</option>
-                                <option value='option2'>Option 2</option>
-                                <option value='option3'>Option 3</option>
+                                <option value='cam1'>Câmera 1</option>
+                                <option value='cam2'>Câmera 2</option>
+                                <option value='cam3'>Câmera 3</option>
                             </Select>
                             <Select placeholder='Selecione seu microfone'>
-                                <option value='option1'>Option 1</option>
-                                <option value='option2'>Option 2</option>
-                                <option value='option3'>Option 3</option>
+                                <option value='mic1'>Microfone 1</option>
+                                <option value='mic2'>Microfone 2</option>
+                                <option value='mic3'>Microfone 3</option>
                             </Select>
 
                         </VStack>
@@ -109,17 +109,28 @@ export function HomeDashboardScreen() {
                     </ModalFooter>
                 </ModalContent>
             </Modal>
+
+
             <GridItem pl='2' bg='#000000' area={'menu'}>
 
             </GridItem>
 
 
             <GridItem pl='2' bg='#fff444' area={'header'}>
-                {/*<Header titulo="HOME"/>*/}
+                {/*<HeaderComponent titulo="HOME"/>*/}
             </GridItem>
 
 
             <GridItem pl='0' area={'content'}>
+                <IconButton
+                    isRound={true}
+                    variant='outline'
+                    colorScheme='teal'
+                    aria-label='Done'
+                    fontSize='20px'
+                    size='lg'
+                    icon={alert}
+                />
                 <Grid
                     templateAreas={`"coluna1 coluna2"`}
                     gridTemplateRows={'88vh 0fr 0vh'}
@@ -170,9 +181,6 @@ export function HomeDashboardScreen() {
                                 <CardBody>
                                     <Stack spacing='4'>
                                         {data.map((data, id) => (
-
-
-
                                             <Card size='sm' key={id} variant="filled">
                                                 <LinkOverlay onClick={onOpen} href="#">
                                                     <CardHeader>
@@ -197,7 +205,6 @@ export function HomeDashboardScreen() {
                                                                 </Box>
                                                             </HStack>
                                                         </VStack>
-
                                                     </CardBody>
                                                 </LinkOverlay>
                                             </Card>
