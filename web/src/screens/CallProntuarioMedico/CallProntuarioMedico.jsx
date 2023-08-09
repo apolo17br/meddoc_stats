@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridItem, ScaleFade } from '@chakra-ui/react'
+import { Grid, GridItem, ScaleFade, SimpleGrid } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { ModalOverlay } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
@@ -7,17 +7,19 @@ import { Image } from '@chakra-ui/react'
 import { IconButton } from '@chakra-ui/react'
 import { Modal } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
-import { Select } from '@chakra-ui/react'
+import { Center } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
 import { Divider } from '@chakra-ui/react'
 import { Textarea } from '@chakra-ui/react'
-import { Card, CardHeader, CardBody } from '@chakra-ui/react'
+import { Input, InputRightElement, InputGroup } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, Heading } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
-import calendar from '../../assets/icons/calendar-icon.png'
-import clock from '../../assets/icons/clock-icon.png'
-import user from '../../assets/icons/user-icon.png'
-import alert from '../../assets/icons/alert-icon.png'
+import search from '../../assets/icons/search-icon.png'
+import exit from '../../assets/icons/exit-icon.png'
+import cam from '../../assets/icons/cam-icon.png'
+import expand from '../../assets/icons/expand-video-icon.png'
 import add from '../../assets/icons/add-icon.png'
+import { useToast } from '@chakra-ui/react'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
 
 
@@ -25,25 +27,11 @@ import styles from './CallProntuarioMedico.module.css'
 import { right } from '@popperjs/core';
 
 export function CallProntuarioMedico() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isOpen1, onOpen: onOpen1, onClose: onClose1 } = useDisclosure()
 
-    const data = [
-        {
-            name: 'Fulano de Tal',
-            data: '10 de abril, terça-feira',
-            hour: '15h30'
-        },
-        {
-            name: 'Fulano de Tal',
-            data: '14 de abril, sexta-feira',
-            hour: '9h'
-        },
-        {
-            name: 'Fulano de Tal',
-            data: '18 de abril, terça-feira',
-            hour: '15h30'
-        },
-    ]
+    const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure()
+
+    const toast = useToast()
 
     return (
         <Grid
@@ -57,56 +45,68 @@ export function CallProntuarioMedico() {
         >
             <Modal
                 isCentered
-                onClose={onClose}
-                isOpen={isOpen}
+                onClose={onClose1}
+                isOpen={isOpen1}
                 motionPreset='slideInBottom'
                 size='xl'
             >
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Consulta</ModalHeader>
-                    <ModalCloseButton />
+                    <HStack>
+                        <ModalHeader>CID-10</ModalHeader>
+                        <InputGroup>
+
+                            <Input size='lg' className={`${styles.modalSearchBar}`} placeholder='Digite aqui o nome da CID-10' />
+                            <InputRightElement className={`${styles.modalSearchBar}`}>
+                                <IconButton className={`${styles.modalSearchBarIcon}`} colorScheme='white'>
+                                    <Image boxSize='18px' src={search} alt='Botão pesquisar' />
+                                </IconButton>
+                            </InputRightElement>
+
+                        </InputGroup>
+                        <Box className={`${styles.modalExitBox}`}>
+                            <IconButton colorScheme='white' onClick={onClose1} >
+                                <Image boxSize='24px' src={exit} alt='Botão fechar' />
+                            </IconButton>
+                        </Box>
+
+                    </HStack>
+
                     <ModalBody>
                         <VStack
                             spacing={4}
-                            align='center'>
-
-                            <Box>
-                                <Image boxSize='auto' src={user} alt='Foto usuário' />
-                            </Box>
-                            <Text className={`${styles.modalTitle}`}> Paciente Fulano de Tal </Text>
-                            <HStack className={`${styles.modalClockAndText}`} spacing='1%'>
+                            align='left'>
+                            <SimpleGrid align='center' spacing={4} templateColumns='repeat(auto-fill, minmax(100px, 3fr))'>
                                 <Box>
-                                    <Image boxSize='auto' src={clock} alt='Horário' />
+                                    <Text className={`${styles.selecionadoText}`}> Selecionado: </Text>
                                 </Box>
                                 <Box>
-                                    <Text> Agora (faltam 0 min) </Text>
+                                    <Card className={`${styles.cidCards}`} size='sm'>
+                                        <CardBody>
+                                            <Text>CID-10: 23</Text>
+                                        </CardBody>
+                                    </Card>
                                 </Box>
-                            </HStack>
-                            <Text className={`${styles.modalCenterText}`}>
-                                Antes de iniciar o seu atendimento, certifique-se
-                                de que sua câmera e seu microfone estejam devidamente
-                                conectados ao seu dispositivo.
+                                <Box>
+                                    <Card className={`${styles.cidCards}`} size='sm'>
+                                        <CardBody>
+                                            <Text>CID-10: 91</Text>
+                                        </CardBody>
+                                    </Card>
+                                </Box>
+                            </SimpleGrid>
+                            <Text className={`${styles.modalLeftText}`}>
+                                "[CID-10 LIST]"
                             </Text>
                             <Divider />
-                            <Select placeholder='Selecione sua câmera'>
-                                <option value='option1'>Option 1</option>
-                                <option value='option2'>Option 2</option>
-                                <option value='option3'>Option 3</option>
-                            </Select>
-                            <Select placeholder='Selecione seu microfone'>
-                                <option value='option1'>Option 1</option>
-                                <option value='option2'>Option 2</option>
-                                <option value='option3'>Option 3</option>
-                            </Select>
 
                         </VStack>
                     </ModalBody>
-                    <ModalFooter>
+                    <ModalFooter isCentered>
                         <Button colorScheme='green' mr={3}>
-                            Iniciar consulta
+                            SELECIONAR
                         </Button>
-                        <Button onClick={onClose}> Cancelar </Button>
+                        <Button onClick={onClose1}> CANCELAR </Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
@@ -122,7 +122,7 @@ export function CallProntuarioMedico() {
             </GridItem>
 
 
-            <GridItem pl='0' area={'content'}>
+            <GridItem className={`${styles.contentBigBox}`} pl='0' area={'content'}>
                 <Grid
                     templateAreas={`"coluna1 coluna2"`}
                     gridTemplateRows={'88vh 0fr 0vh'}
@@ -170,7 +170,7 @@ export function CallProntuarioMedico() {
                                 <CardHeader className={`${styles.cardHeader}`}>
                                     <HStack>
                                         <Text className={`${styles.dataTextList}`} size='md'> CID 10 </Text>
-                                        <IconButton className={`${styles.cidIcon}`} size='sm' isRound={true} bg="#38B6FF" variant='solid'>
+                                        <IconButton onClick={onOpen1} className={`${styles.cidIcon}`} size='sm' isRound={true} bg="#38B6FF" variant='solid'>
                                             <Image boxSize='15px' src={add} alt='Botão de adicionar CID' />
                                         </IconButton>
                                     </HStack>
@@ -189,11 +189,66 @@ export function CallProntuarioMedico() {
                         </Box>
                     </VStack>
 
+
+                    <Modal
+                        isCentered
+                        onClose={onClose2}
+                        isOpen={isOpen2}
+                        motionPreset='slideInBottom'
+                        size='full'
+                    >
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalHeader> Vídeo </ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody>
+                                <Center>
+                                    <Image className={`${styles.camCardSize}`} boxSize='auto' src={cam} alt='Camera' />
+                                </Center>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button size="lg" onClick={onClose2}>Fechar</Button>
+                            </ModalFooter>
+                        </ModalContent>
+                    </Modal>
+
+
                     <GridItem pl='0' area={'coluna2'}>
                         <VStack
-                            spacing={4}
+                            spacing={0}
                             align='left'>
-                            assssssss
+
+                            <Box className={`${styles.camBoxAdjust}`}>
+                                <Card size='sm' variant="outline">
+                                    <CardBody >
+                                        <Center>
+                                            <Image className={`${styles.camCardSize}`} boxSize='auto' src={cam} alt='Camera' />
+                                        </Center>
+                                    </CardBody>
+                                    <IconButton onClick={onOpen2} className={`${styles.expandIcon}`} colorScheme='white' variant='solid'>
+                                        <Image boxSize='32px' src={expand} alt='Expandir' />
+                                    </IconButton>
+                                </Card>
+                            </Box>
+
+                            <Box className={`${styles.buttonsBox}`}>
+                                <Center>
+                                    <HStack spacing={8}>
+                                        <Button className={`${styles.buttonStyle}`} size='lg' bg='#A0AEC0' color='#FFFFFF'> Cancelar </Button>
+                                        <Button className={`${styles.buttonStyle}`} size='lg' bg='#38B6FF' color='#FFFFFF' onClick={() =>
+                                            toast({
+                                                position: 'top-center',
+                                                title: 'Salvo',
+                                                description: "Você salvou o progresso de preenchimento dos dados do paciente.",
+                                                status: 'success',
+                                                duration: 3000,
+                                                isClosable: true,
+                                            })
+                                        }> Salvar </Button>
+                                        <Button className={`${styles.buttonStyle}`} size='lg' bg='#4FD1C5' color='#FFFFFF'> Próximo </Button>
+                                    </HStack>
+                                </Center>
+                            </Box>
                         </VStack>
                     </GridItem>
                 </Grid>

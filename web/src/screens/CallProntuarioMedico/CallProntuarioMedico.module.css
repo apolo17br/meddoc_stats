@@ -27,11 +27,11 @@
     left: 37%;
 }
 
-.usersList{
+.usersList {
     margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 3%; 
+    margin-bottom: 3%;
     height: 45vh;
     overflow: scroll;
     overflow-x: hidden;
@@ -41,7 +41,7 @@
     font-size: 26px;
 }
 
-.dataTitleList{
+.dataTitleList {
     font-size: 30px;
     text-align: center;
     font-weight: 700;
@@ -67,7 +67,7 @@
     font-weight: 700;
 }
 
-.cardHeader{
+.cardHeader {
     margin-bottom: -3%;
 }
 
@@ -97,11 +97,76 @@
     padding-bottom: 0%;
 }
 
-.cardCidSize{
-    height: 60px;
+.cardCidSize {
+    height: 65px;
 }
 
-.cidIcon{
+.cidIcon {
     text-align: right;
     position: relative;
+}
+
+.modalSearchBar {
+    text-align: center;
+}
+
+.modalSearchBarIcon {
+    margin-top: 15%;
+}
+
+
+.css-1atqylj {
+    width: 10%;
+}
+
+.modalLeftText {
+    padding-top: 3%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 5%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.modalExitBox {
+    margin-left: 5%;
+}
+
+.selecionadoText {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.camBoxAdjust {
+    padding: 3%;
+    padding-bottom: 0%;
+}
+
+.camCardSize {
+    padding: 10%;
+}
+
+.expandIcon {
+    margin-left: auto;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.contentBigBox {
+    overflow: scroll;
+    overflow-y: initial;
+    overflow-x: hidden;
+
+    scrollbar-width: none;
+}
+
+.buttonsBox {
+    top: auto;
+    bottom: 5%;
+    margin-left: 1%;
+}
+
+.buttonStyle {
+    width: 10vw;
 }
