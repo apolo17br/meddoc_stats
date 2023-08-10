@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import '../../styles/global.css';
 import HeaderComponent from './HeaderComponent.jsx'
 import theme from "../../theme";
+import { AuthenticatedLayout } from "../Layout/AuthenticatedLayout";
 
 export default function App({ Component }) {
   const isAuthenticated = true;
@@ -16,7 +17,11 @@ export default function App({ Component }) {
         <HeaderComponent/>
         <Component {...HeaderComponent}/>
         {/* Autenticado */}
-        {isAuthenticated && <Routes />}
+        {isAuthenticated && (
+          <AuthenticatedLayout>
+            <Routes />
+          </AuthenticatedLayout>
+        )}
       </ChakraProvider>
     </BrowserRouter>
   </>
