@@ -30,14 +30,15 @@ export function Routes() {
         <Route path="/criar-nova-senha" element={<CreateNewPasswordScreen />} />
         <Route path="/criar-nova-senha-confirmacao" element={<CreateNewPasswordScreenConfirmation />} />
 
-        <Route path="/dashboard" element={<HomeDashboardScreen />} />
-        <Route path="/call-prontuario" element={<CallProntuarioMedico />} />
+        
 
 
         <Route element={<CustomRoute />}>
           {/* PRIVATE ROUTES */}
 
           <Route path="/home" element={<HomeScreen />} />
+          <Route path="/dashboard" element={<HomeDashboardScreen />} />
+          <Route path="/call-prontuario" element={<CallProntuarioMedico />} />
 
         </Route>
       </Route>
