@@ -5,7 +5,7 @@ import '../../styles/global.css';
 import HeaderComponent from './HeaderComponent.jsx'
 import theme from "../../theme";
 
-export default function App() {
+export default function App({ Component }) {
   const isAuthenticated = true;
 
   return (<>
@@ -13,13 +13,12 @@ export default function App() {
       <ChakraProvider theme={theme}>
         {/* Não Autenticado */}
         {!isAuthenticated && <Routes />}
-
+        <HeaderComponent/>
+        <Component {...HeaderComponent}/>
         {/* Autenticado */}
         {isAuthenticated && <Routes />}
       </ChakraProvider>
     </BrowserRouter>
-  
-    <HeaderComponent/>
   </>
   )
 }

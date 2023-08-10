@@ -23,8 +23,8 @@ import { useToast } from '@chakra-ui/react'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
 
 
+
 import styles from './CallProntuarioMedico.module.css'
-import { right } from '@popperjs/core';
 
 export function CallProntuarioMedico() {
     const { isOpen: isOpen1, onOpen: onOpen1, onClose: onClose1 } = useDisclosure()
