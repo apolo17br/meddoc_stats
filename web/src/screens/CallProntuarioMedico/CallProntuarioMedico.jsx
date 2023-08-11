@@ -22,7 +22,7 @@ import add from '../../assets/icons/add-icon.png'
 import { useToast } from '@chakra-ui/react'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
 import { AuthenticatedLayout } from "../../components/Layout/AuthenticatedLayout";
-/*import { HeaderComponent } from "../../components/HeaderComponent/Header.jsx";*/
+import HeaderComponent from "../../components/HeaderComponent/Header.jsx";
 
 
 import styles from './CallProntuarioMedico.module.css'
@@ -118,8 +118,8 @@ export function CallProntuarioMedico() {
             </GridItem>
 
 
-            <GridItem pl='2' bg='#fff444' area={'header'}>
-                {/*<HeaderComponent titulo="HOME"/>*/}
+            <GridItem pl='2' bg='#38B6FF' area={'header'}>
+                <HeaderComponent titulo="PRONTUÁRIO MÉDICO"/>
             </GridItem>
 
 
