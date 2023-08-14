@@ -10,15 +10,14 @@ import { Box } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
 import { Divider } from '@chakra-ui/react'
-import { IconButton } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import calendar from '../../assets/icons/calendar-icon.png'
 import clock from '../../assets/icons/clock-icon.png'
 import user from '../../assets/icons/user-icon.png'
-import alert from '../../assets/icons/alert-icon.png'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
-
+import * as V from 'victory';
+import { VictoryPie } from 'victory';
 
 
 import styles from './HomeDashboardScreen.module.css'
@@ -122,15 +121,6 @@ export function HomeDashboardScreen() {
 
 
             <GridItem pl='0' area={'content'}>
-                <IconButton
-                    isRound={true}
-                    variant='outline'
-                    colorScheme='teal'
-                    aria-label='Done'
-                    fontSize='20px'
-                    size='lg'
-                    icon={alert}
-                />
                 <Grid
                     templateAreas={`"coluna1 coluna2"`}
                     gridTemplateRows={'88vh 0fr 0vh'}
@@ -145,7 +135,7 @@ export function HomeDashboardScreen() {
                     >
                         <Box>
                             <GridItem className={`${styles.boxes}`} pl='0' area={'coluna1'}>
-                                <SimpleGrid columns={3} spacing={5} templateColumns='repeat(auto-fill, minmax(30%, 0vh))'>
+                                <SimpleGrid columns={3} spacing={5} templateColumns='repeat(auto-fill, minmax(30%, auto))'>
                                     <Card>
                                         <CardHeader>
                                             <Text size='md' className={`${styles.dataTitle}`}> Retornos pendentes</Text>
@@ -225,9 +215,20 @@ export function HomeDashboardScreen() {
                                 </CardHeader>
                                 <CardBody>
                                     <Text className={`${styles.textoCalendario}`}> Em construção. Por enquanto, verifique os agendamentos dos seus pacientes clicando no botão abaixo. </Text>
-                                    <Button className={`${styles.botaoCalendario}`} fontSize='18px' colorScheme='blue'> Minhas consultas </Button>
+                                    <Button className={`${styles.botaoCalendario}`} fontSize='1vw' colorScheme='blue'> Minhas consultas </Button>
                                 </CardBody>
                             </Card>
+                            <svg width={'50vw'} height={'45vh'}>
+                                <VictoryPie
+                                    standalone={false}
+                                    innerRadius={100}
+                                    colorScale={["cyan", "navy" ]}
+                                    data={[
+                                        { x: "Plantões", y: 62 },
+                                        { x: "Agendamentos", y: 189 },
+                                      ]}
+                                />
+                            </svg>
                         </VStack>
                     </GridItem>
                 </Grid>
