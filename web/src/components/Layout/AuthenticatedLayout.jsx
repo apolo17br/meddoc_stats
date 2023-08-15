@@ -1,14 +1,12 @@
-import { Flex, Box } from "@chakra-ui/react";
-import SideMenu from "../SideMenu/SideMenu";
+import SidebarWithHeader from "../SideMenu/SideMenu";
+/* eslint-disable react/prop-types */
 
+// import HeaderComponent from "../App/HeaderComponent";
 // eslint-disable-next-line react/prop-types
 export function AuthenticatedLayout({children}) {
   return (
-    <Flex>
-      <SideMenu />
-       <Box ml={{ base: 0, md: 60 }} p="4">
+      <SidebarWithHeader>
         {children}
-      </Box>
-    </Flex>
+      </SidebarWithHeader>
   );
 }
