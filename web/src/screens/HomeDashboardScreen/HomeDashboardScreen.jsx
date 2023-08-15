@@ -16,10 +16,10 @@ import calendar from '../../assets/icons/calendar-icon.png'
 import clock from '../../assets/icons/clock-icon.png'
 import user from '../../assets/icons/user-icon.png'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
-import * as V from 'victory';
 import { VictoryPie } from 'victory';
 
-
+import { AuthenticatedLayout } from '../../components/Layout/AuthenticatedLayout'
+import HeaderComponent from "../../components/HeaderComponent/Header.jsx";
 import styles from './HomeDashboardScreen.module.css'
 
 export function HomeDashboardScreen() {
@@ -111,12 +111,12 @@ export function HomeDashboardScreen() {
 
 
             <GridItem pl='2' bg='#000000' area={'menu'}>
-
+                {/*<AuthenticatedLayout />*/}
             </GridItem>
 
 
-            <GridItem pl='2' bg='#fff444' area={'header'}>
-                {/*<HeaderComponent titulo="HOME"/>*/}
+            <GridItem pl='2' bg='#38B6FF' area={'header'}>
+                <HeaderComponent titulo="DASHBOARD"/>
             </GridItem>
 
 
