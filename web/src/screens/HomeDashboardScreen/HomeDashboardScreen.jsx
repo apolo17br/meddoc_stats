@@ -218,17 +218,25 @@ export function HomeDashboardScreen() {
                                     <Button className={`${styles.botaoCalendario}`} fontSize='1vw' colorScheme='blue'> Minhas consultas </Button>
                                 </CardBody>
                             </Card>
-                            <svg width={'50vw'} height={'45vh'}>
-                                <VictoryPie
-                                    standalone={false}
-                                    innerRadius={100}
-                                    colorScale={["cyan", "navy" ]}
-                                    data={[
-                                        { x: "Plantões", y: 62 },
-                                        { x: "Agendamentos", y: 189 },
-                                      ]}
-                                />
-                            </svg>
+                            <Box className={`${styles.chartBox}`}>
+                                <svg className={`${styles.chartBox}`} width={'100%'} height={'100%'}>
+                                    <VictoryPie
+                                        standalone={false}
+                                        innerRadius={100}
+                                        colorScale={["#6DE0FF", "#2C43F4"]}
+                                        tickFormat={() => ""}
+                                        animate={{
+                                            duration: 2000
+                                        }}
+                                        categories={{ x: ["dogs", "cats"] }}
+                                        data={[
+                                            { x: "62", y: 62 },
+                                            { x: "189", y: 189 },
+                                        ]}
+
+                                    />
+                                </svg>
+                            </Box>
                         </VStack>
                     </GridItem>
                 </Grid>
