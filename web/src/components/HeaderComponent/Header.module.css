@@ -1,0 +1,42 @@
+.leftBox {
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: auto;
+    width: 75%;
+    text-align: center;
+}
+
+.centerBox {
+    text-align: center;
+    right: 30%;
+    left: 0;
+    margin-top: 1.25vw;
+    font-size: 2vw;
+    color: white;
+    font-size-adjust: none;
+}
+
+.rightBox {
+    margin-top: 1.25vw;
+    margin-right: 0;
+    margin-left: 12vw;
+    width: 100%;
+    text-align: right;
+    font-size: 2vw;
+}
+
+.rightBox2 {
+    text-align: right;
+    color: white;
+    left: auto;
+    font-size: 1vw;
+    right: 0;
+}
+
+.text1 {
+    font-weight: 600;
+}
+
+.rightIcon {
+    width: 50%;
+}

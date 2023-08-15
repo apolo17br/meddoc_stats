@@ -21,10 +21,11 @@ import expand from '../../assets/icons/expand-video-icon.png'
 import add from '../../assets/icons/add-icon.png'
 import { useToast } from '@chakra-ui/react'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
+import { AuthenticatedLayout } from "../../components/Layout/AuthenticatedLayout";
+import HeaderComponent from "../../components/HeaderComponent/Header.jsx";
 
 
 import styles from './CallProntuarioMedico.module.css'
-import { right } from '@popperjs/core';
 
 export function CallProntuarioMedico() {
     const { isOpen: isOpen1, onOpen: onOpen1, onClose: onClose1 } = useDisclosure()
@@ -113,12 +114,12 @@ export function CallProntuarioMedico() {
 
 
             <GridItem pl='2' bg='#000000' area={'menu'}>
-
+                {/*<AuthenticatedLayout />*/}
             </GridItem>
 
 
-            <GridItem pl='2' bg='#fff444' area={'header'}>
-                {/*<HeaderComponent titulo="HOME"/>*/}
+            <GridItem pl='2' bg='#38B6FF' area={'header'}>
+                <HeaderComponent titulo="PRONTUÁRIO MÉDICO"/>
             </GridItem>
 
 
