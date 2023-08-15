@@ -94,7 +94,24 @@
 
 .chartBox {
     height: 40vh;
-    width: 40vw;
+    width: auto;
     text-align: center;
     text-align: center;
+}
+
+.dotsBox {
+    height: auto;
+    left: auto;
+}
+
+.dotsText {
+    font-size: 1vw;
+    font-weight: 400;
+    text-align: left;
+}
+
+.dotsText2 {
+    font-size: 1vw;
+    font-weight: 800;
+    text-align: left;
 }

@@ -14,12 +14,14 @@ import { Card, CardHeader, CardBody } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import calendar from '../../assets/icons/calendar-icon.png'
 import clock from '../../assets/icons/clock-icon.png'
+import pontoAzulClaro from '../../assets/ilustrations/blue-dot.png'
+import pontoAzulEscuro from '../../assets/ilustrations/dark-blue-dot.png'
 import user from '../../assets/icons/user-icon.png'
 import { ModalContent, ModalHeader, ModalCloseButton, LinkOverlay, ModalBody, ModalFooter } from '@chakra-ui/react'
 import { VictoryPie } from 'victory';
 
 import { AuthenticatedLayout } from '../../components/Layout/AuthenticatedLayout'
-import HeaderComponent from "../../components/HeaderComponent/Header.jsx";
+import HeaderComponent from "../../components/HeaderDashboardComponent/HeaderDashboard.jsx";
 import styles from './HomeDashboardScreen.module.css'
 
 export function HomeDashboardScreen() {
@@ -116,7 +118,7 @@ export function HomeDashboardScreen() {
 
 
             <GridItem pl='2' bg='#38B6FF' area={'header'}>
-                <HeaderComponent titulo="DASHBOARD"/>
+                <HeaderComponent nome="Guilherme Hausen" quantidade='5' />
             </GridItem>
 
 
@@ -138,7 +140,7 @@ export function HomeDashboardScreen() {
                                 <SimpleGrid columns={3} spacing={5} templateColumns='repeat(auto-fill, minmax(30%, auto))'>
                                     <Card>
                                         <CardHeader>
-                                            <Text size='md' className={`${styles.dataTitle}`}> Retornos pendentes</Text>
+                                            <Text size='md' className={`${styles.dataTitle}`}> Retornos pendentes </Text>
                                         </CardHeader>
                                         <CardBody>
                                             <Text className={`${styles.dataNumber}`}> 3 </Text>
@@ -188,7 +190,7 @@ export function HomeDashboardScreen() {
                                                             </HStack>
                                                             <HStack spacing='1%'>
                                                                 <Box>
-                                                                    <Image boxSize='auto' src={clock} alt='Horário' />
+                                                                <Image boxSize='auto' src={clock} alt='Horário' />
                                                                 </Box>
                                                                 <Box>
                                                                     <Text className={`${styles.registerTitle}`}> {data.hour} </Text>
@@ -214,29 +216,49 @@ export function HomeDashboardScreen() {
                                     <Text className={`${styles.dataTextList}`} > Calendário </Text>
                                 </CardHeader>
                                 <CardBody>
-                                    <Text className={`${styles.textoCalendario}`}> Em construção. Por enquanto, verifique os agendamentos dos seus pacientes clicando no botão abaixo. </Text>
-                                    <Button className={`${styles.botaoCalendario}`} fontSize='1vw' colorScheme='blue'> Minhas consultas </Button>
+                                    <Text className={`${styles.textoCalendario}`}> Em construção. Por enquanto, verifique os agendamentos dos seus pacientes no quadro "Próximas consultas" ou verifique a próxima consulta clicando no botão abaixo. </Text>
+                                    <Button onClick={onOpen} className={`${styles.botaoCalendario}`} fontSize='1vw' colorScheme='blue'> Próxima consulta </Button>
                                 </CardBody>
                             </Card>
-                            <Box className={`${styles.chartBox}`}>
-                                <svg className={`${styles.chartBox}`} width={'100%'} height={'100%'}>
-                                    <VictoryPie
-                                        standalone={false}
-                                        innerRadius={100}
-                                        colorScale={["#6DE0FF", "#2C43F4"]}
-                                        tickFormat={() => ""}
-                                        animate={{
-                                            duration: 2000
-                                        }}
-                                        categories={{ x: ["dogs", "cats"] }}
-                                        data={[
-                                            { x: "62", y: 62 },
-                                            { x: "189", y: 189 },
-                                        ]}
+                            <HStack align='center'>
+                                <Box className={`${styles.chartBox}`}>
+                                    <svg className={`${styles.chartBox}`} width={'20vw'} height={'100%'}>
+                                        <VictoryPie
+                                            standalone={false}
+                                            innerRadius={75}
+                                            colorScale={["#6DE0FF", "#2C43F4"]}
+                                            tickFormat={() => ""}
+                                            animate={{
+                                                duration: 2000
+                                            }}
+                                            categories={{ x: ["dogs", "cats"] }}
+                                            data={[
+                                                { x: "62", y: 62 },
+                                                { x: "189", y: 189 },
+                                            ]}
 
-                                    />
-                                </svg>
-                            </Box>
+                                        />
+                                    </svg>
+                                </Box>
+                                <Box className={`${styles.dotsBox}`}>
+                                    <VStack align='left'>
+                                    <HStack spacing='3'>
+                                        <Image boxSize='auto' src={pontoAzulClaro} alt='Ponto Azul' />
+                                        <VStack align='left' spacing='0px'>
+                                            <Text className={`${styles.dotsText}`}> Plantões </Text>
+                                            <Text className={`${styles.dotsText2}`}> 62 </Text>
+                                        </VStack>
+                                    </HStack>
+                                    <HStack spacing='3'>
+                                        <Image boxSize='auto' src={pontoAzulEscuro} alt='Ponto Azul' />
+                                        <VStack align='left' spacing='0px'>
+                                            <Text className={`${styles.dotsText}`}> Agendamentos </Text>
+                                            <Text className={`${styles.dotsText2}`}> 189 </Text>
+                                        </VStack>
+                                    </HStack>
+                                    </VStack>
+                                </Box>
+                            </HStack>
                         </VStack>
                     </GridItem>
                 </Grid>
