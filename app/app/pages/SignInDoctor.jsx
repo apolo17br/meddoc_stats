@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Switch } from 'rea
 import Header from '../components/header';
 import Button from '../components/buttonAzul';
 
-export default function SignIn({ navigation }) {
+export default function SignInDoctor({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return (
@@ -17,13 +17,13 @@ export default function SignIn({ navigation }) {
           <View style={styles.background}>
 
             <View>
-              <Text style={styles.instructions}>Informe seu e-mail e senha para prosseguir.</Text>
+              <Text style={styles.instructions}>Informe seu CRM e senha para prosseguir.</Text>
             </View>
 
             <View>
-              <Text style={styles.captions}>E-mail</Text>
+              <Text style={styles.captions}>CRM</Text>
               <View style={styles.input}>
-                <TextInput placeholder='Seu e-mail' style={styles.placeholder} keyboardType='email-address' autoCapitalize='none' autoCorrect={false} />
+                <TextInput placeholder='Seu CRM (somente números)' style={styles.placeholder} keyboardType='email-address' autoCapitalize='none' autoCorrect={false} />
               </View>
             </View>
 

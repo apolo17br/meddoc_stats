@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import Header from '../components/header';
-import ButtonEnviar from '../components/buttonEnviar';
+import Button from '../components/buttonAzul';
 
 export default function ForgotPassword({ navigation }) {
     return (
@@ -26,7 +26,7 @@ export default function ForgotPassword({ navigation }) {
             </View>
 
             <View>
-              <ButtonEnviar />
+              <Button text='ENVIAR' />
             </View>
 
           </View>

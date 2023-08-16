@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from '../components/header';
-import ButtonEntrar from '../components/buttonEntrar';
+import Button from '../components/buttonAzul';
 
 export default function CreatePassword() {
     return (
@@ -19,7 +19,7 @@ export default function CreatePassword() {
             </View>
 
               <View>
-                <ButtonEntrar />
+                <Button text='ENTRAR' />
               </View>
 
             </View>

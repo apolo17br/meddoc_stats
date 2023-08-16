@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Header from '../components/header';
-import ButtonRedefinir from '../components/buttonRedefinir';
+import Button from '../components/buttonAzul';
 
 export default function RedefinePassword() {
     return (
@@ -34,7 +34,7 @@ export default function RedefinePassword() {
               <Text style={styles.observation}>As senhas devem ser iguais</Text>
 
               <View>
-              <ButtonRedefinir />
+              <Button text='REDEFINIR SENHA' />
               </View>
 
             </View>

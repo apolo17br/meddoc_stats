@@ -1,13 +1,11 @@
 import React from "react";
-import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function ButtonCadastrar({ navigation }) {
+export default function Button({ onPress, text }) {
     return(
-        <View>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Menu')}>
-                <Text style={styles.text}>CADASTRAR</Text>
+            <TouchableOpacity style={styles.button} onPress={onPress}>
+                <Text style={styles.text}>{text}</Text>
             </TouchableOpacity>
-        </View>
     )
 }
 

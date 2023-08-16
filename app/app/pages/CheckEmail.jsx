@@ -25,7 +25,7 @@ export default function ForgotPassword({ navigation }) {
               <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Menu')}>
                   <Text style={styles.text}>ABRIR E-MAIL</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonLater} onPress={() => navigation.navigate('Menu')}>
+              <TouchableOpacity style={styles.buttonLater} onPress={() => navigation.navigate('Home')}>
                   <Text style={styles.textLater}>Confirmar depois</Text>
               </TouchableOpacity>
             </View>
@@ -37,7 +37,7 @@ export default function ForgotPassword({ navigation }) {
               <Text style={styles.tente}>tente outro endereço de e-mail</Text>
               </TouchableOpacity>
             </View>
-          <Text style={{alignSelf:'center', color:'#000', fontSize:10, fontFamily:'Inter'}}>Ilustração por Freepik</Text>
+          <Text style={{fontFamily:'Inter', fontSize:10, alignSelf:'center', color:'#a0aec0'}}>Ilustração por Freepik</Text>
           </View>
       </View>
     );
@@ -109,7 +109,7 @@ export default function ForgotPassword({ navigation }) {
     },
     tente: {
       fontFamily:'Inter',
-      fontSize:14,
+      fontSize:12,
       color:'#38b6ff',
       fontWeight:'700',
     }

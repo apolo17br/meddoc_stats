@@ -1,14 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import Header from '../components/header';
-
 export default function AllSetDoctor({ navigation }) {
     return (
       <View style={{flex:1, backgroundColor:'#38b6ff', height:'100%'}}>
 
         <View  style={styles.header}>
-        <Text style={styles.title}>TUDO PRONTO!</Text>
-            <View style={{backgroundColor:'#fff', borderRadius:20, height:'100%', width:'20%'}}>
+            <Text style={styles.title}>TUDO PRONTO!</Text>
+            <View style={{backgroundColor:'#fff', height:'100%', width:'100%', maxWidth:'80px', borderRadius:'20px'}}>
                 <Image source={require('../../assets/img/logo.png')} style={styles.logoHeader}/>
             </View>
         </View>
@@ -20,7 +18,8 @@ export default function AllSetDoctor({ navigation }) {
             </View>
 
             <View style={{alignItems:'center'}}>
-              <Image source={require('../../assets/img/doctors.png')} style={{width:'256px', height:'168.26px', resizeMode:'stretch', marginBottom:'8px'}} />
+              <Image source={require('../../assets/img/doctors.png')} style={{width:'256px', height:'168.26px', resizeMode:'stretch'}} />
+              <Text style={{fontFamily:'Inter', fontSize:10, alignSelf:'center', color:'#a0aec0'}}>Ilustração por Freepik</Text>
             </View>
 
             <View>
@@ -28,19 +27,11 @@ export default function AllSetDoctor({ navigation }) {
             </View>
 
             <View>
-              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Menu')}>
+              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                   <Text style={styles.text}>RETORNAR À TELA INICIAL</Text>
               </TouchableOpacity>
             </View>
-
-            <View style={{textAlign:'center', marginTop:'32px'}}>
-              <Text style={styles.nao}>Não recebeu o e-mail? Confira sua caixa de spam</Text>
-              <Text style={styles.nao}>ou</Text>
-              <TouchableOpacity>
-              <Text style={styles.tente}>tente outro endereço de e-mail</Text>
-              </TouchableOpacity>
-            </View>
-          <Text style={{alignSelf:'center', color:'#000', fontSize:10, fontFamily:'Inter'}}>Ilustração por Freepik</Text>
+          
           </View>
       </View>
     );
@@ -51,6 +42,17 @@ export default function AllSetDoctor({ navigation }) {
         margin:'16px',
         flexDirection:'row',
         justifyContent:'space-between',
+        alignItems:'center',
+        maxHeight:'64px',
+        height:'100%'
+    },
+    logoHeader: {
+        maxWidth:'64px',
+        maxHeight:'128px',
+        width:'100%',
+        height:'100%',
+        resizeMode:'stretch',
+        alignSelf:'center'
     },
     subHeader: {
       backgroundColor: '#38b6ff',
@@ -61,7 +63,6 @@ export default function AllSetDoctor({ navigation }) {
       fontFamily:'Inter',
       fontWeight:900,
       marginLeft:'16px',
-      marginBottom:'16px'
     },
     background: {
       borderTopLeftRadius:'30px',
@@ -77,6 +78,7 @@ export default function AllSetDoctor({ navigation }) {
       fontWeight:400,
       color:'#000',
       textAlign:'center',
+      marginTop:'16px',
       marginBottom:'16px',
     },
     button: {
@@ -106,18 +108,5 @@ export default function AllSetDoctor({ navigation }) {
         fontFamily:'Inter',
         fontSize:'20',
         fontWeight:'400',
-    },
-    nao: {
-      fontFamily:'Inter',
-      fontSize:12,
-      color:'#000',
-      fontWeight:'700',
-      lineHeight:'16px'
-    },
-    tente: {
-      fontFamily:'Inter',
-      fontSize:14,
-      color:'#38b6ff',
-      fontWeight:'700',
     }
   });

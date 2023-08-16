@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Switch } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../components/header';
-import ButtonCadastrar from '../components/buttonCadastrar';
-import Button from '../components/Button/Button';
+import Button from '../components/buttonAzul';
 
 export default function SignUp({ navigation }) {
     return (
@@ -46,7 +45,7 @@ export default function SignUp({ navigation }) {
               <View>
                 <Text style={styles.captions}>Senha</Text>
                 <View style={styles.input}>
-                  <TextInput placeholder='Sua senha' style={styles.placeholder} keyboardType='password' autoCapitalize='none' autoCorrect={false}/>
+                  <TextInput placeholder='Sua senha' type='password' style={styles.placeholder} keyboardType='password' autoCapitalize='none' autoCorrect={false}/>
                 </View>
                 <Text style={styles.observation}>A senha deve conter pelo menos 6 caracteres</Text>
               </View>
@@ -54,12 +53,12 @@ export default function SignUp({ navigation }) {
               <View>
                 <Text style={styles.captions}>Confirme sua senha</Text>
                 <View style={styles.input}>
-                  <TextInput placeholder='Confirme sua nova senha' style={styles.placeholder} keyboardType='password' autoCapitalize='none' autoCorrect={false}/>
+                  <TextInput placeholder='Confirme sua nova senha' style={styles.placeholder} type='password' keyboardType='password' autoCapitalize='none' autoCorrect={false}/>
                 </View>
                 <Text style={styles.observation}>As senhas devem ser iguais</Text>
               </View>
 
-              <Button text="Cadastrar" onPress={() => navigation.navigate('Menu')} />
+              <Button text='CADASTRAR' />
 
               <View style={{flexDirection:'row', alignSelf:'center', marginTop:'16px'}}>
                 <Text style={{color:'#A0AEC0', fontFamily:'Inter', fontWeight:'400', fontSize:14}}>Já possui uma conta? </Text>
@@ -72,7 +71,7 @@ export default function SignUp({ navigation }) {
         </View>
     );
   }
-
+  
   const styles = StyleSheet.create({
     subHeader: {
       backgroundColor: '#38b6ff',
